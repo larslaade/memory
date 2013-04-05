@@ -29,8 +29,13 @@ var Memory = function(list_element) {
 };
 
 Memory.prototype.resize = function() {
-	this.win.height();
-	this.list.width(this.win.height());
+	var h = this.win.height(),
+		w = this.win.width(),
+		new_w = h;
+	if (new_w > w) {
+		new_w = w;
+	}
+	this.list.width(new_w).height(new_w);
 };
 
 Memory.prototype.flipCard = function(card) {
