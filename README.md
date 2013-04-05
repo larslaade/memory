@@ -1,9 +1,11 @@
-memory
+Memory
 ======
 
-memory card game created with css3 and javascript
+A memory card game created with HTML, CSS3 and JavaScript.
+I initially crafted this for my daughter in 2010.
+Now I've updated the code to run in all major browsers.
 
-licence
+Licence
 =======
 
 The MIT License (MIT)
