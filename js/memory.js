@@ -15,6 +15,8 @@ var Memory = function(list_element) {
 	this.rounds = 0;
 	this.win = $(window);
 
+	this.has3d = Modernizr.csstransforms3d;
+
 	this.list.on('click', 'li', function() {
 		that.flipCard($(this));
 	}).on('mousedown', 'li', function(event) {
@@ -49,7 +51,7 @@ Memory.prototype.flipCard = function(card) {
 			this.current_flipped_2 = card;
 			setTimeout(function() {
 				that.check();
-			}, 1000);
+			}, (this.has3d ? 1000 : 100));
 		}
 	}
 };
@@ -74,7 +76,7 @@ Memory.prototype.check = function() {
 		// check if all cards are flipped
 		if (this.match === this.items_length) {
 			this.list.addClass('rotate');
-			div = $('<p class="overlay"></p>').html('Required clicks: <strong>' + this.rounds + '</strong>.<br/>Try again!').css({
+			div = $('<p class="overlay"></p>').html('Comparisons: <strong>' + this.rounds + '</strong>.<br/>Try again!').css({
 				'top': this.page.height() / 2 - 150,
 				'left': this.page.width() / 2 - 150
 			}).on('click', function() {
