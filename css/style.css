@@ -19,19 +19,7 @@ body, html {
 body {
 	font-family: Helvitca, Arial, sans-serif;
 	font-size: 100%;
-	/*background: #2b1b30 url(../img/bg_2.png) repeat scroll 0 0;*/
-	/*background-color: gray;
-	background-image: -webkit-linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
-	background-image: -moz-linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
-	background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
-	background-size: 50px 50px;*/
-	background-color:#269;
-	background-image: linear-gradient(white 2px, transparent 2px),
-	linear-gradient(90deg, white 2px, transparent 2px),
-	linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-	linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
-	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+	background: #269;
 }
 
 .page {
