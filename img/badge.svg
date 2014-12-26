@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="168px" height="168px" viewBox="0 0 168 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>memory</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#2337A8" offset="0%"></stop>
+            <stop stop-color="#CC78D2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <polygon id="Badge" stroke="#4A4A4A" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" points="83.999997 153.114927 67.4173223 167.366749 57.5508647 147.853867 36.7765354 154.674921 35.1283661 132.871633 13.3250789 131.223464 20.1461354 110.449142 0.633251042 100.582677 14.8850729 83.999994 0.633253942 67.4173087 20.1461337 57.5508619 13.3250872 36.7765239 35.128363 35.1283698 36.7765141 13.3250937 57.5508835 20.1461248 67.4173567 0.633244387 84.0000008 14.8850729 100.582685 0.63325269 110.449148 20.146138 131.223488 13.3250948 132.87165 35.1283826 154.674936 36.7765593 147.85388 57.5508939 167.366758 67.4173703 153.114927 84.0000121 167.366745 100.582699 147.853858 110.449159 154.674897 131.223499 132.871609 132.871658 131.223429 154.674944 110.449126 147.853871 100.582656 167.366753 "></polygon>
+    </g>
+</svg>
