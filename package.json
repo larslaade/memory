@@ -1,0 +1,16 @@
+{
+	"name": "Memory",
+	"version": "2.0.0",
+	"title": "Memory",
+	"description": "Mamory card game",
+	"author": {
+		"name": "Lars Laade"
+	},
+	"private": true,
+	"devDependencies": {
+		"uglify-js": "~2.4.16"
+	},
+	"scripts": {
+		"uglify": "uglifyjs js/memory.js -o js/memory.min.js"
+	}
+}
