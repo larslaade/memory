@@ -20,6 +20,7 @@
 	var rounds = 0;
 
 	var has3d = Modernizr.csstransforms3d;
+	var hasTouch = Modernizr.touch;
 
 	var setupMap = function() {
 		var front,
@@ -228,7 +229,7 @@
 	};
 
 	// clicking a card
-	list.addEventListener('click', function(event) {
+	list.addEventListener((hasTouch) ? 'touchstart' : 'click', function(event) {
 		var element = event.target,
 			nodeName = element.nodeName.toLowerCase();
 
@@ -238,6 +239,8 @@
 		}
 
 		if (nodeName === 'li') {
+			event.preventDefault();
+			event.stopPropagation();
 			flipCard(element);
 		}
 	});
