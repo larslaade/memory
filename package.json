@@ -8,9 +8,11 @@
 	},
 	"private": true,
 	"devDependencies": {
-		"uglify-js": "~2.4.16"
+		"uglify-js": "~2.4.16",
+		"clean-css": "~3.0.1"
 	},
 	"scripts": {
-		"uglify": "uglifyjs js/memory.js -o js/memory.min.js"
+		"uglify": "uglifyjs js/memory.js -o js/memory.min.js",
+		"minify": "cleancss css/style.css -o css/style.min.css"
 	}
 }
