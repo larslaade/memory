@@ -49,8 +49,9 @@
 	};
 
 	var resizeHandler = function() {
-		var height = document.body.scrollHeight,
-			width = document.body.scrollWidth,
+		var style = window.getComputedStyle(document.body, null),
+			height = Number(style.height.replace(/px|%|em/ig, '')),
+			width = Number(style.width.replace(/px|%|em/ig, '')),
 			newWidth = height;
 
 		if (newWidth > width) {
@@ -59,6 +60,8 @@
 
 		list.style.width = newWidth + 'px';
 		list.style.height = newWidth + 'px';
+		list.style.marginTop = (-1 * newWidth / 2) + 'px';
+		list.style.marginLeft = (-1 * newWidth / 2) + 'px';
 	};
 
 	var flipCard = function(card) {
@@ -111,28 +114,29 @@
 
 			// check if all cards are flipped
 			if (match === itemsCount) {
-				list.classList.add('rotate');
-
-				div = document.createElement('div');
-				div.classList.add('overlay');
-				div.innerHTML = 'Comparisons: <strong>' + rounds + '</strong>.<br/>Try again!';
-				div.style.top = '50%';
-				div.style.left = '50%';
-				div.style.marginTop = -150 + 'px';
-				div.style.marginLeft = -150 + 'px';
-
-				retryHandler = function() {
-					retry(div);
-				};
-				div.addEventListener('click', retryHandler);
-
-				list.parentElement.appendChild(div);
-
-				setTimeout(function() {
-					list.classList.remove('rotate');
-				}, 2000);
+				renderResult();
 			}
 		}
+	};
+
+	var renderResult = function() {
+		list.classList.add('rotate');
+
+		div = document.createElement('div');
+		div.classList.add('overlay');
+		div.innerHTML = 'Comparisons: <strong>' + rounds + '</strong>.<br/>Click / Tap here to try again!';
+
+		retryHandler = function() {
+			retry(div);
+		};
+
+		div.addEventListener((hasTouch) ? 'touchstart' : 'click', retryHandler);
+
+		list.parentElement.appendChild(div);
+
+		setTimeout(function() {
+			list.classList.remove('rotate');
+		}, 2000);
 	};
 
 	var retry = function(element) {
@@ -140,7 +144,7 @@
 		var i = itemsCount - 1,
 			item;
 
-		element.removeEventListener('click', retryHandler);
+		element.removeEventListener((hasTouch) ? 'touchstart' : 'click', retryHandler);
 		element.parentNode.removeChild(element);
 
 		list.classList.remove('rotate');
