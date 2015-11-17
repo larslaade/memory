@@ -98,7 +98,7 @@
 		rounds++;
 
 		// not the same
-		if (currentFlippedOne.getElementsByClassName('front')[0].title !== currentFlippedTwo.getElementsByClassName('front')[0].title) {
+		if (currentFlippedOne.getElementsByClassName('front')[0].getAttribute('title') !== currentFlippedTwo.getElementsByClassName('front')[0].getAttribute('title')) {
 			currentFlippedOne.classList.add('fail');
 			currentFlippedTwo.classList.add('fail');
 

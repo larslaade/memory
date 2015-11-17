@@ -4,7 +4,7 @@
 	display: block;
 	height: 0;
 	visibility: hidden;
-} 
+}
 
 .clearfix:after { clear: both; }
 
@@ -20,6 +20,12 @@ body {
 	font-family: Helvitca, Arial, sans-serif;
 	font-size: 100%;
 	background: #269;
+}
+
+.svgsprite {
+	overflow: hidden;
+	height: 0;
+	width: 0;
 }
 
 .page {

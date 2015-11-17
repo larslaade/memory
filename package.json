@@ -1,6 +1,6 @@
 {
 	"name": "Memory",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"title": "Memory",
 	"description": "Mamory card game",
 	"author": {
@@ -8,11 +8,16 @@
 	},
 	"private": true,
 	"devDependencies": {
-		"uglify-js": "~2.4.16",
-		"clean-css": "~3.0.1"
+		"uglify-js": "~2.6.1",
+		"clean-css": "~3.4.8",
+		"svgo": "~0.6.0",
+		"svg-sprite-generator": "~0.0.7",
+		"svg-sprite": "~1.2.14"
 	},
 	"scripts": {
-		"uglify": "uglifyjs js/memory.js -o js/memory.min.js",
-		"minify": "cleancss css/style.css -o css/style.min.css"
+		"uglify": "uglifyjs src/js/memory.js -o js/memory.min.js && uglifyjs src/js/modernizr.js -o js/modernizr.min.js",
+		"minify": "cleancss src/css/style.css -o css/style.min.css",
+		"svg": "svgo -f src/img -o img/svg",
+		"svgs": "svg-sprite -sD img img/svg/*.svg"
 	}
 }
