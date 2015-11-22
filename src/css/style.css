@@ -8,7 +8,8 @@
 
 .clearfix:after { clear: both; }
 
-body, html {
+body,
+html {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -17,7 +18,7 @@ body, html {
 }
 
 body {
-	font-family: Helvitca, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
 	background: #269;
 }
@@ -44,8 +45,6 @@ body {
 	width: 100%;
 	height: 100%;
 	list-style-type: none;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
@@ -57,22 +56,10 @@ body {
 	height: 25%;
 	padding: 10px;
 	cursor: pointer;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-
-	-webkit-transition: -webkit-transform ease 1s;
-	-webkit-transform: rotateY(-180deg);
-	-moz-transition: -moz-transform ease 1s;
-	-moz-transform: rotateY(-180deg);
 	transition: transform ease 1s;
 	transform: rotateY(-180deg);
-
-	-webkit-perspective-origin: 50% 50%;
-	-moz-perspective-origin: 50% 50%;
 	perspective-origin: 50% 50%;
-
 	overflow: hidden;
 }
 
@@ -84,15 +71,11 @@ body {
 	left: 5%;
 	border: 5px solid #fff;
 	border-radius: 5px;
-	-webkit-transition: border ease 250ms;
-	-moz-transition: border ease 250ms;
 	transition: border ease 250ms;
 	background-color: #fff;
 }
 
 .flipped {
-	-webkit-transform: rotateY(0);
-	-moz-transform: rotateY(0);
 	transform: rotateY(0);
 }
 
@@ -103,10 +86,6 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform: rotateY(0);
-	-moz-backface-visibility: hidden;
-	-moz-transform: rotateY(0);
 	backface-visibility: hidden;
 	transform: rotateY(0);
 	z-index: 1;
@@ -120,66 +99,22 @@ body {
 }
 
 .csstransforms3d .front {
-	-webkit-transition: all ease 1s;
-	-moz-transition: all ease 1s;
 	transition: all ease 1s;
 }
 
 .front {
-	-webkit-transform: rotateY(-180deg);
-	-moz-transform: rotateY(-180deg);
 	transform: rotateY(-180deg);
 	z-index: 0;
 }
 
 .flipped .front {
-	-webkit-transform: rotateY(0);
-	-moz-transform: rotateY(0);
 	transform: rotateY(0);
 	z-index: 1;
 }
 
 .flipped .back {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 	z-index: 0;
-}
-
-@-moz-keyframes FAIL-MOVE {
-	0% {
-		-moz-transform: translateX(0) rotateY(0);
-	}
-	25% {
-		-moz-transform: translateX(10px) rotateY(0g);
-	}
-	50% {
-		-moz-transform: translateX(0) rotateY(0);
-	}
-	75% {
-		-moz-transform: translateX(-10px) rotateY(0);
-	}
-	100% {
-		-moz-transform: translateX(0) rotateY(0);
-	}
-}
-
-@-webkit-keyframes FAIL-MOVE {
-	0% {
-		-webkit-transform: translateX(0) rotateY(0);
-	}
-	25% {
-		-webkit-transform: translateX(10px) rotateY(0);
-	}
-	50% {
-		-webkit-transform: translateX(0) rotateY(0);
-	}
-	75% {
-		-webkit-transform: translateX(-10px) rotateY(0);
-	}
-	100% {
-		-webkit-transform: translateX(0) rotateY(0);
-	}
 }
 
 @keyframes FAIL-MOVE {
@@ -201,14 +136,6 @@ body {
 }
 
 .fail {
-	-moz-animation-name: FAIL-MOVE;
-	-moz-animation-duration: 150ms;
-	-moz-animation-timing-function: linear;
-	-moz-animation-iteration-count: 4;
-	-webkit-animation-name: FAIL-MOVE;
-	-webkit-animation-duration: 150ms;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: 4;
 	animation-name: FAIL-MOVE;
 	animation-duration: 150ms;
 	animation-timing-function: linear;
@@ -217,30 +144,6 @@ body {
 
 .fail .inner {
 	border-color: #ff5858;
-}
-
-@-moz-keyframes WIN-MOVE {
-	0% {
-		-moz-transform: scale(1) rotateY(0);
-	}
-	50% {
-		-moz-transform: scale(1.1) rotateY(0);
-	}
-	100% {
-		-moz-transform: scale(1) rotateY(0);
-	}
-}
-
-@-webkit-keyframes WIN-MOVE {
-	0% {
-		-webkit-transform: scale(1) rotateY(0);
-	}
-	50% {
-		-webkit-transform: scale(1.1) rotateY(0);
-	}
-	100% {
-		-webkit-transform: scale(1) rotateY(0);
-	}
 }
 
 @keyframes WIN-MOVE {
@@ -256,14 +159,6 @@ body {
 }
 
 .win {
-	-moz-animation-name: WIN-MOVE;
-	-moz-animation-duration: 300ms;
-	-moz-animation-timing-function: linear;
-	-moz-animation-iteration-count: 1;
-	-webkit-animation-name: WIN-MOVE;
-	-webkit-animation-duration: 300ms;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: 1;
 	animation-name: WIN-MOVE;
 	animation-duration: 300ms;
 	animation-timing-function: linear;
@@ -273,24 +168,6 @@ body {
 
 .win .inner {
 	border-color: #67d325;
-}
-
-@-moz-keyframes ROTATE {
-	0% {
-		-moz-transform: rotate(0deg) rotateY(180deg);
-	}
-	100% {
-		-moz-transform: rotate(360deg) rotateY(180deg);
-	}
-}
-
-@-webkit-keyframes ROTATE {
-	0% {
-		-webkit-transform: rotate(0deg) rotateY(180deg);
-	}
-	100% {
-		-webkit-transform: rotate(360deg) rotateY(180deg);
-	}
 }
 
 @keyframes ROTATE {
@@ -303,14 +180,6 @@ body {
 }
 
 .rotate .card {
-	-moz-animation-name: ROTATE;
-	-moz-animation-duration: 2s;
-	-moz-animation-timing-function: linear;
-	-moz-animation-iteration-count: infinite;
-	-webkit-animation-name: ROTATE;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
 	animation-name: ROTATE;
 	animation-duration: 2s;
 	animation-timing-function: linear;
@@ -333,8 +202,6 @@ body {
 	line-height: 25px;
 	text-align: center;
 	z-index: 99;
-	-webkit-transition: border 300ms;
-	-moz-transition: border 300ms;
 	transition: border 300ms;
 	cursor: pointer;
 }

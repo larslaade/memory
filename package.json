@@ -18,6 +18,7 @@
 		"uglify": "uglifyjs src/js/memory.js -o js/memory.min.js && uglifyjs src/js/modernizr.js -o js/modernizr.min.js",
 		"minify": "cleancss src/css/style.css -o css/style.min.css",
 		"svg": "svgo -f src/img -o img/svg",
-		"svgs": "svg-sprite -sD img img/svg/*.svg"
+		"svgs": "svg-sprite -sD img img/svg/*.svg",
+		"build": "npm run uglify && npm run minify && npm run svg && npm run svgs"
 	}
 }
