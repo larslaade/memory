@@ -19,6 +19,7 @@
 		"minify": "cleancss src/css/style.css -o css/style.min.css",
 		"svg": "svgo -f src/img -o img/svg",
 		"svgs": "svg-sprite -sD img img/svg/*.svg",
-		"build": "npm run uglify && npm run minify && npm run svg && npm run svgs"
+		"fix": "node fixSvg.js",
+		"build": "npm run uglify && npm run minify && npm run svg && npm run svgs && npm run fix"
 	}
 }
