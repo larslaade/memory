@@ -9,12 +9,18 @@ var filenames = fs.readdirSync(inputPath);
 
 function processFile(filename) {
 	var content = fs.readFileSync(inputPath + '/' + filename, 'utf8');
-	var defs = content.match(/<defs>(.*?)<\/defs>/g);
+	var defsRegex = /<defs>(.*?)<\/defs>/g;
 
-	content.replace(/<defs>(.*?)<\/defs>/g, '');
+	// search all defs-tags
+	var defs = content.match(defsRegex);
 
+	// remove all defs-tags
+	content = content.replace(defsRegex, '');
+
+	// reconstruct all defs-tags into one defs-tag
 	defs = '<defs>' + defs.join('').replace(/<defs>/g, '').replace(/<\/defs>/g, '') + '</defs>';
 
+	// add the defs-tags to the svg
 	content = content.replace(/http:\/\/www\.w3\.org\/1999\/xlink">/, 'http://www.w3.org/1999/xlink">' + defs);
 
 	addToOutput(content);
