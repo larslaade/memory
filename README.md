@@ -2,10 +2,13 @@ Memory
 ======
 
 A memory card game created with HTML, CSS3 and JavaScript.
+
 I initially crafted this for my daughter in 2010.
-2012 it was updated to run in all major browsers.
-2014 it runs native without jQuery and has SVG images.
-2015 updated SVG to inline sprite and removed prefixes.
+
+- 2010 initial version
+- 2012 update for all major browsers
+- 2014 removed jQuery and added SVG images
+- 2015 updated SVG to a inline sprite and removed CSS-prefixes
 
 Licence
 =======
