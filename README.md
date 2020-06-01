@@ -8,7 +8,7 @@ I initially crafted this for my daughter in 2010.
 - 2010 initial version
 - 2012 update for all major browsers
 - 2014 removed jQuery and added SVG images
-- 2015 updated SVG to a inline sprite and removed CSS-prefixes
+- 2015 inlined SVG as a sprite and removed CSS-prefixes
 
 Licence
 =======
