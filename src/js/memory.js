@@ -1,14 +1,14 @@
 // Memory
 
-// (c) 2010-2014 Lars Laade
+// (c) 2010-2020 Lars Laade
 // MIT license
 
 (function() {
 
 	var list = document.getElementById('card_list');
 
-	var page = document.getElementsByClassName('page')[0];
-	var items = document.getElementsByClassName('card');
+	var page = document.querySelector('.page');
+	var items = Array.prototype.slice.call(document.querySelectorAll('.card'), 0);
 
 	var cards = [];
 	var map = [];
@@ -25,18 +25,13 @@
 	var retryHandler;
 
 	function setupMap() {
-		var front,
-			back,
-			inner,
-			i;
-
 		cards = [];
 		map = [];
 
-		for (i = 0; i < itemsCount; i++) {
-			front = items[i].querySelectorAll('.front')[0];
-			back = items[i].querySelectorAll('.back')[0];
-			inner = items[i].querySelectorAll('.inner')[0];
+		for (let i = 0; i < itemsCount; i++) {
+			const front = items[i].querySelector('.front');
+			const back = items[i].querySelector('.back');
+			const inner = items[i].querySelector('.inner');
 
 			cards.push({
 				name: front.getAttribute('title'),
@@ -53,14 +48,9 @@
 	}
 
 	function resizeHandler() {
-		var style = window.getComputedStyle(document.body, null),
-			height = Number(style.height.replace(/px|%|em/ig, '')),
-			width = Number(style.width.replace(/px|%|em/ig, '')),
-			newWidth = height;
-
-		if (newWidth > width) {
-			newWidth = width;
-		}
+		const height = window.innerHeight,
+		const width = window.innerWidth,
+		const newWidth = (height > width) ? width : height;
 
 		list.style.width = newWidth + 'px';
 		list.style.height = newWidth + 'px';
@@ -74,10 +64,10 @@
 			return;
 		}
 
-		var index = Array.prototype.indexOf.call(items, card);
-		var indexMap = map.indexOf(index);
+		const index = items.indexOf(card);
+		const indexMap = map.indexOf(index);
 
-		var currentSet = cards[map[indexMap]];
+		const currentSet = cards[map[indexMap]];
 
 		currentSet
 			.front
@@ -103,10 +93,6 @@
 	}
 
 	function check() {
-		var div;
-		var one;
-		var two;
-
 		rounds++;
 
 		// not the same
@@ -114,8 +100,8 @@
 			currentFlippedOne.classList.add('fail');
 			currentFlippedTwo.classList.add('fail');
 
-			one = currentFlippedOne;
-			two = currentFlippedTwo;
+			const one = currentFlippedOne;
+			const two = currentFlippedTwo;
 
 			currentFlippedOne = null;
 			currentFlippedTwo = null;
@@ -140,7 +126,8 @@
 	function renderResult() {
 		list.classList.add('rotate');
 
-		div = document.createElement('div');
+		const div = document.createElement('div');
+
 		div.classList.add('overlay');
 		div.innerHTML = 'Comparisons: <strong>' + rounds + '</strong>.<br/>Click / Tap here to try again!';
 
@@ -159,8 +146,7 @@
 
 	function retry(element) {
 
-		var i = itemsCount - 1,
-			item;
+		let i = itemsCount - 1;
 
 		element.removeEventListener((hasTouch) ? 'touchstart' : 'click', retryHandler);
 		element.parentNode.removeChild(element);
@@ -168,7 +154,7 @@
 		list.classList.remove('rotate');
 
 		do {
-			item = items[i];
+			const item = items[i];
 			item.classList.remove('win');
 			item.classList.remove('flipped');
 			i--;
@@ -199,9 +185,9 @@
 
 	// removes the front of a card
 	function resetCard(card) {
-		var index = Array.prototype.indexOf.call(items, card);
-		var indexMap = map.indexOf(index);
-		var currentSet = cards[map[indexMap]];
+		const index = items.call(card);
+		const indexMap = map.indexOf(index);
+		const currentSet = cards[map[indexMap]];
 
 		if (card.classList.contains('flipped')) {
 			return;
@@ -246,7 +232,7 @@
 	resizeHandler();
 	window.addEventListener('resize', resizeHandler);
 
-	// helper
+	// recursive search the dom for a specific nodename
 	function getParent(element, search) {
 		var p = element.parentElement;
 
@@ -275,7 +261,6 @@
 
 		if (nodeName === 'li') {
 			event.preventDefault();
-			event.stopPropagation();
 
 			if (event.type !== 'mousedown') {
 				flipCard(element);
