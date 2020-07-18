@@ -1,9 +1,9 @@
 Memory
 ======
 
-A memory card game created with HTML, CSS3 and JavaScript.
+A memory card game created with HTML, CSS and JavaScript.
 
-I initially crafted this for my daughter in 2010.
+Initially I created this for my daughter in 2010.
 
 - 2010 initial version
 - 2012 update for all major browsers
