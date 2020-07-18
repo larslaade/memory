@@ -48,8 +48,8 @@
 	}
 
 	function resizeHandler() {
-		const height = window.innerHeight,
-		const width = window.innerWidth,
+		const height = window.innerHeight;
+		const width = window.innerWidth;
 		const newWidth = (height > width) ? width : height;
 
 		list.style.width = newWidth + 'px';
@@ -77,7 +77,7 @@
 			.children[0]
 			.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#' + currentSet.name);
 
-		setTimeout(function() {
+		setTimeout(() => {
 			if (!currentFlippedOne) {
 				card.classList.add('flipped');
 				currentFlippedOne = card;
@@ -85,7 +85,7 @@
 				card.classList.add('flipped');
 				currentFlippedTwo = card;
 
-				setTimeout(function() {
+				setTimeout(() => {
 					check();
 				}, (has3d ? 1000 : 100));
 			}
@@ -129,7 +129,7 @@
 		const div = document.createElement('div');
 
 		div.classList.add('overlay');
-		div.innerHTML = 'Comparisons: <strong>' + rounds + '</strong>.<br/>Click / Tap here to try again!';
+		div.innerHTML = `Comparisons: <strong>${rounds}</strong>.<br/>Click / Tap here to try again!`;
 
 		retryHandler = function() {
 			retry(div);
@@ -233,33 +233,23 @@
 	window.addEventListener('resize', resizeHandler);
 
 	// recursive search the dom for a specific nodename
-	function getParent(element, search) {
-		var p = element.parentElement;
+	function closest(element, search) {
 
-		if (!p || !p.nodeName) {
+		if (!element || !element.nodeName) {
 			return null;
 		}
 
-		if (p.nodeName.toLowerCase() === search) {
-			return p;
+		if (element.nodeName.toLowerCase() === search) {
+			return element;
 		} else {
-			return getParent(p, search);
+			return closest(element.parentElement, search);
 		}
 	}
 
 	function onCardInteraction(event) {
-		var element = event.target,
-			nodeName = element.nodeName.toLowerCase();
+		const element = closest(event.target, 'li');
 
-		if (nodeName !== 'li') {
-			element = getParent(element, 'li');
-
-			if (element) {
-				nodeName = element.nodeName.toLowerCase();
-			}
-		}
-
-		if (nodeName === 'li') {
+		if (element) {
 			event.preventDefault();
 
 			if (event.type !== 'mousedown') {
