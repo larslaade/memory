@@ -3,22 +3,24 @@ Memory
 
 A memory card game created with HTML, CSS and JavaScript.
 
-Initially I created this for my daughter in 2010.
+Initially I created it for my daughter in 2010.
 
-- 2010 initial version
-- 2012 update for all major browsers
-- 2014 removed jQuery and added SVG images
-- 2015 inlined SVG as a sprite and removed CSS-prefixes
+- 2010
+	- initial version
+- 2012
+	- update for all major browsers
+- 2014
+	- remove jQuery and add SVG images
+- 2015
+	- inline SVG as a sprite
+	- remove CSS-prefixes
+- 2020
+	- use more modern js
+	- use rollup for js
+	- use flexbox in css
+	- remove resize event
 
 Licence
 =======
 
-The MIT License (MIT)
-
-Copyright (c) 2020 Lars Laade
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+see LICENCE.txt

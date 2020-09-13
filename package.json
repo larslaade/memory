@@ -1,5 +1,5 @@
 {
-	"name": "Memory",
+	"name": "memory",
 	"version": "3.0.0",
 	"title": "Memory",
 	"description": "Mamory card game",
@@ -8,19 +8,20 @@
 	},
 	"private": true,
 	"devDependencies": {
-		"uglify-js": "~3.6.0",
-		"clean-css": "~4.2.1",
+		"clean-css": "~4.2.3",
 		"clean-css-cli": "^4.3.0",
-		"svgo": "~1.2.2",
+		"rollup": "^2.26.11",
+		"rollup-plugin-terser": "^7.0.2",
+		"svg-sprite": "~1.5.0",
 		"svg-sprite-generator": "~0.0.7",
-		"svg-sprite": "~1.5.0"
+		"svgo": "~1.3.2"
 	},
 	"scripts": {
-		"uglify": "uglifyjs src/js/memory.js -o js/memory.min.js && uglifyjs src/js/modernizr.js -o js/modernizr.min.js",
+		"rollup": "rollup --config",
 		"minify": "cleancss src/css/style.css -o css/style.min.css",
 		"svg": "svgo -f src/img -o img/svg",
 		"svgs": "svg-sprite -sD img img/svg/*.svg",
 		"fix": "node fixSvg.js",
-		"build": "npm run uglify && npm run minify && npm run svg && npm run svgs && npm run fix"
+		"build": "npm run rollup && npm run minify && npm run svg && npm run svgs && npm run fix"
 	}
 }

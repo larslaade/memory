@@ -10,13 +10,13 @@
 	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
-	<meta name ="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
 	<div class="page">
-		<ul id="card_list" class="clearfix">
+		<ul id="card_list">
 			<li class="card"><div class="inner">
 				<svg class="back">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use>
@@ -150,7 +150,7 @@
 	<script>
 		// lazyload icon-sprite, to avoid including it
 		(function() {
-		'use strict';
+			'use strict';
 			var ajax = new XMLHttpRequest();
 
 			ajax.open('GET', 'img/sprite.css.svg', true);

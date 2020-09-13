@@ -1,13 +1,3 @@
-.clearfix:before,
-.clearfix:after {
-	content: "\0020";
-	display: block;
-	height: 0;
-	visibility: hidden;
-}
-
-.clearfix:after { clear: both; }
-
 body,
 html {
 	margin: 0;
@@ -18,9 +8,12 @@ html {
 }
 
 body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
-	background: #269;
+	background-color: #269;
 }
 
 .svgsprite {
@@ -35,12 +28,37 @@ body {
 	width: 100%;
 	height: 100%;
 	max-width: 904px;
+	max-height: 904px;
+}
+
+@media (max-height: 904px) {
+
+	.page {
+		width: 100vh;
+	}
+}
+
+@media (max-width: 904px) {
+
+	.page {
+		height: 100vw;
+	}
+}
+
+@media (max-width: 904px) and (orientation: landscape) {
+
+	.page {
+		height: 100%;
+	}
 }
 
 #card_list {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
@@ -49,8 +67,6 @@ body {
 
 .card {
 	position: relative;
-	display: inline;
-	float: left;
 	width: 25%;
 	height: 25%;
 	padding: 10px;
